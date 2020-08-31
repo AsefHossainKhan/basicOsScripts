@@ -1,0 +1,48 @@
+//Second Problem
+
+#!/bin/bash
+
+echo "Enter an age"
+read age
+
+if [ $age -ge 17 ]
+then 
+echo "man/woman"
+elif [ $age -ge 12 ]
+then 
+echo "teen-age"
+elif [ $age -ge 0 ]
+then 
+echo "infant"
+else
+echo "invalid age"
+fi
+
+//Third Problem
+
+#!/bin/bash
+
+echo "Enter marks"
+read marks
+
+if [ $marks -gt 100 ]
+then 
+echo "Invalid Marks"
+elif [ $marks -ge 80 ]
+then 
+echo "A"
+elif [ $marks -ge 70 ]
+then 
+echo "B"
+elif [ $marks -ge 60 ]
+then 
+echo "C"
+elif [ $marks -ge 50 ]
+then 
+echo "D"
+elif [ $marks -ge 0 ]
+then 
+echo "F"
+else
+echo "Invalid Marks"
+fi
