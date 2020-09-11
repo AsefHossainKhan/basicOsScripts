@@ -1,0 +1,78 @@
+#Task 1
+#!/bin/bash
+
+read -p "What is your age? " age
+read -p "Was your grade in physics/chemistry above A? [yes/no] " grade
+
+if [ $grade == "yes" ] && [ $age -ge 18 ]
+then
+  echo "You are admitted"
+else 
+  echo "You are not admitted"
+fi
+
+#Task 2
+#!/bin/bash
+
+read -p "Print Odd Numbers Upto Your Value? " N
+start=0
+
+while [ $start -le $N ]
+do
+  if [ `expr $start % 2` != 0 ]
+  then
+    echo $start
+  fi
+  start=`expr $start + 1`
+done
+
+#Task 3
+#!/bin/bash
+
+read -p "Enter your Current Balance " currentBalance
+read -p "Enter your Withdraw Amount " withdrawAmount
+
+if [ $withdrawAmount -le $currentBalance ] && [ $currentBalance -ge 500 ]
+then
+  currentBalance=`expr $currentBalance-$withdrawAmount`
+  echo "Withdraw Successful"
+else
+  echo "Withdraw Failed"
+fi
+
+#Task 4
+#!/bin/bash
+
+read -p "Enter your marks for Physics " physics
+read -p "Enter your marks for Chemistry " chemistry
+read -p "Enter your marks for Maths " maths
+read -p "Enter your marks for English " english
+
+grade() {
+  if [ $2 -gt 100 ] 
+  then
+    echo "Invalid Marks"
+  elif [ $2 -ge 80 ]
+  then
+    echo "$1 = A"
+  elif [ $2 -ge 70 ]
+  then
+    echo "$1 = B"
+  elif [ $2 -ge 60 ]
+  then
+    echo "$1 = C"
+  elif [ $2 -ge 50 ]
+  then
+    echo "$1 = D"
+  elif [ $2 -ge 0 ]
+  then
+    echo "$1 = F"
+  else
+    echo "Invalid Marks"
+  fi
+}
+
+grade "Physics" $physics
+grade "Chemistry" $chemistry
+grade "Maths" $maths
+grade "English" $english

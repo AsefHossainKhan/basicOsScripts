@@ -5,7 +5,6 @@ read -p "Enter your marks for Chemistry " chemistry
 read -p "Enter your marks for Maths " maths
 read -p "Enter your marks for English " english
 
-
 grade() {
   if [ $2 -gt 100 ] 
   then
